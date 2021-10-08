@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     private float speed = 10.0f;
     // Game score
     private int count_score;
-    public Text Count;
+    public Text scoreText;
     Text win_text;
     int score_to_win = 14;
 
@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     {
         getRigidbody = this.GetComponent<Rigidbody>();
         count_score = 0;
+        scoreText = gameObject.GetComponent<Text>();
     }
 
     // Update is called once per frame
@@ -39,7 +40,6 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //Count.text = "Score: " + count_score;
         if (other.gameObject.tag=="PickUp")
         {
             other.gameObject.SetActive(false);
@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
 
     void setCountText()
     {
-        
+        //this.scoreText.text = "Score: " + count_score;
         if (count_score == score_to_win)
         {
 
