@@ -9,18 +9,18 @@ public class PlayerController : MonoBehaviour
     private Rigidbody getRigidbody;
     private float horizontal_input;
     private float vertical_input;
-    private float speed = 10.0f;
+    private float speed = 7.0f;
     // Game score
     private int count_score;
     public Text scoreText;
-    Text win_text;
-    int score_to_win = 14;
+    public TextMesh winText;
+    int score_to_win = 15;
 
     private void Start()
     {
         getRigidbody = this.GetComponent<Rigidbody>();
         count_score = 0;
-        scoreText = gameObject.GetComponent<Text>();
+        scoreText = GameObject.Find("ScoreText").GetComponent<Text>();
     }
 
     // Update is called once per frame
@@ -50,10 +50,10 @@ public class PlayerController : MonoBehaviour
 
     void setCountText()
     {
-        //this.scoreText.text = "Score: " + count_score;
+        this.scoreText.text = "Score: " + count_score;
         if (count_score == score_to_win)
         {
-
+            winText.gameObject.SetActive(true);
         }
     }
 
