@@ -15,9 +15,12 @@ public class PlayerController : MonoBehaviour
     public Text scoreText;
     public TextMesh winText;
     int score_to_win = 15;
+    public Button nextLevel;
+    public int score;
 
     private void Start()
     {
+        this.scoreText.text = "Score: " + count_score;
         getRigidbody = this.GetComponent<Rigidbody>();
         count_score = 0;
         scoreText = GameObject.Find("ScoreText").GetComponent<Text>();
@@ -54,7 +57,9 @@ public class PlayerController : MonoBehaviour
         if (count_score == score_to_win)
         {
             winText.gameObject.SetActive(true);
+            nextLevel.gameObject.SetActive(true);
         }
     }
 
+    
 }
