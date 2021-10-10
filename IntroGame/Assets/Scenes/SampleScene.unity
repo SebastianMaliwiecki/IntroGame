@@ -1062,7 +1062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1042296657}
-  offset: {x: -1, y: 13, z: -12}
+  offset: {x: 0, y: 13, z: -12}
 --- !u!4 &970042663 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9200436958439450834, guid: b079befff7e0f3b449fe75edce5f9ae5, type: 3}
